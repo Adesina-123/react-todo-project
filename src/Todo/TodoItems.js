@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class TodoItems extends React.Component {
   styles = () => {
@@ -18,7 +19,10 @@ class TodoItems extends React.Component {
           onChange={this.props.handleChange.bind(this, id)}
         />{' '}
         {title}
-        <button style={btn}> x</button>
+        <button style={btn} onClick={this.handleClick}>
+          {' '}
+          x
+        </button>
       </div>
     );
   }
@@ -29,7 +33,12 @@ const btn = {
   padding: '5px 10px',
   borderRadius: '50px',
   color: '#fff',
-  float: 'right'
+  float: 'right',
+};
+
+
+TodoItems.propTypes = {
+  TodoItems: PropTypes.object.isRequired,
 };
 
 export default TodoItems;

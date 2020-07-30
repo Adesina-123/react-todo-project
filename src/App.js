@@ -1,6 +1,7 @@
 import React from 'react';
 import Todo from './Todo/Todo';
 import './App.css';
+import Header from './Header/Header'
 class App extends React.Component {
   constructor (props) {
     super (props);
@@ -35,6 +36,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
+        <Header />
         <Todo todos={this.state.todos} handleChange={this.handleChange} />
       </div>
     );
